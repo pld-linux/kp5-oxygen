@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.15.3
+%define		kdeplasmaver	5.21.2
 %define		qtver		5.9.0
 %define		kpname		oxygen
 Summary:	Plasma and Qt widget style and window decorations for Plasma 5 and KDE 4
 Name:		kp5-%{kpname}
-Version:	5.15.3
+Version:	5.21.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	b0224262aaea0611a5304e9586d9ddbf
+# Source0-md5:	37931e86e6c8a9171d0a381071ad8187
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -52,6 +52,7 @@ install -d build
 cd build
 %cmake -G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	..
 %ninja_build
 
@@ -86,8 +87,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/sounds/Oxygen*.ogg
 %{_iconsdir}/hicolor/256x256/apps/oxygen-settings.png
 %{_iconsdir}/Oxygen*
-
-%files devel
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/liboxygenstyle5.so
-%attr(755,root,root) %{_libdir}/liboxygenstyleconfig5.so
+%{_datadir}/color-schemes/Oxygen.colors
+%{_datadir}/color-schemes/OxygenCold.colors
