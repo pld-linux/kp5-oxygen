@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.21.2
+%define		kdeplasmaver	5.21.3
 %define		qtver		5.9.0
 %define		kpname		oxygen
 Summary:	Plasma and Qt widget style and window decorations for Plasma 5 and KDE 4
 Name:		kp5-%{kpname}
-Version:	5.21.2
+Version:	5.21.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	37931e86e6c8a9171d0a381071ad8187
+# Source0-md5:	c372d80efbb6e883d6fcedd123bf27d9
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -73,9 +73,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/oxygen-demo5
 %attr(755,root,root) %{_bindir}/oxygen-settings5
 %attr(755,root,root) %{_libdir}/liboxygenstyle5.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/liboxygenstyle5.so.5
+%ghost %{_libdir}/liboxygenstyle5.so.5
 %attr(755,root,root) %{_libdir}/liboxygenstyleconfig5.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/liboxygenstyleconfig5.so.5
+%ghost %{_libdir}/liboxygenstyleconfig5.so.5
 %attr(755,root,root) %{_libdir}/qt5/plugins/kstyle_oxygen_config.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/org.kde.kdecoration2/oxygendecoration.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/styles/oxygen.so
