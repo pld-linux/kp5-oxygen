@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.27.4
+%define		kdeplasmaver	5.27.5
 %define		qtver		5.15.2
 %define		kpname		oxygen
 Summary:	Plasma and Qt widget style and window decorations for Plasma 5 and KDE 4
 Name:		kp5-%{kpname}
-Version:	5.27.4
-Release:	2
+Version:	5.27.5
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	8c3e8d166c8261aab5bdb75cfade6546
+# Source0-md5:	06d8187c1365ea93a6b6c944e357e6c0
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
